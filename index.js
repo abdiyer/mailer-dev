@@ -1,6 +1,8 @@
 // Import express into our project
 const express = require("express");
 
+const multer = require("multer");
+
 // Creating an instance of express function
 const app = express();
 
@@ -22,3 +24,7 @@ app.listen(PORT, () => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.post("/send_email", (req, res) => {
+  console.log(req.body);
+});
